@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D4F60121DC6EDAD0076F554 /* FMRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F60111DC6EDAD0076F554 /* FMRefreshControl.m */; };
 		1D78D9EA1DD7589C003555C5 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D78D9E91DD7589C003555C5 /* RootTableViewController.m */; };
 		1D8FA09F1DC3588B00988096 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8FA09E1DC3588B00988096 /* main.m */; };
 		1D8FA0A21DC3588B00988096 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8FA0A11DC3588B00988096 /* AppDelegate.m */; };
@@ -15,12 +14,11 @@
 		1D8FA0A81DC3588B00988096 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8FA0A61DC3588B00988096 /* Main.storyboard */; };
 		1D8FA0AA1DC3588B00988096 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D8FA0A91DC3588B00988096 /* Assets.xcassets */; };
 		1D8FA0AD1DC3588B00988096 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8FA0AB1DC3588B00988096 /* LaunchScreen.storyboard */; };
-		1DEBCF661DC4E14C0023EDC8 /* FMRefreshfoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBCF651DC4E14C0023EDC8 /* FMRefreshfoot.m */; };
+		1DAB14331DD96FE000724703 /* FMRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB14301DD96FE000724703 /* FMRefreshControl.m */; };
+		1DAB14341DD96FE000724703 /* FMRefreshfoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB14321DD96FE000724703 /* FMRefreshfoot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D4F60101DC6EDAD0076F554 /* FMRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRefreshControl.h; sourceTree = "<group>"; };
-		1D4F60111DC6EDAD0076F554 /* FMRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRefreshControl.m; sourceTree = "<group>"; };
 		1D78D9E81DD7589C003555C5 /* RootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTableViewController.h; sourceTree = "<group>"; };
 		1D78D9E91DD7589C003555C5 /* RootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
 		1D8FA09A1DC3588B00988096 /* FMRefresh2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMRefresh2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,8 +31,10 @@
 		1D8FA0A91DC3588B00988096 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D8FA0AC1DC3588B00988096 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D8FA0AE1DC3588B00988096 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1DEBCF641DC4E14C0023EDC8 /* FMRefreshfoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRefreshfoot.h; sourceTree = "<group>"; };
-		1DEBCF651DC4E14C0023EDC8 /* FMRefreshfoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRefreshfoot.m; sourceTree = "<group>"; };
+		1DAB142F1DD96FE000724703 /* FMRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRefreshControl.h; sourceTree = "<group>"; };
+		1DAB14301DD96FE000724703 /* FMRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRefreshControl.m; sourceTree = "<group>"; };
+		1DAB14311DD96FE000724703 /* FMRefreshfoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRefreshfoot.h; sourceTree = "<group>"; };
+		1DAB14321DD96FE000724703 /* FMRefreshfoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRefreshfoot.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,13 +67,13 @@
 		1D8FA09C1DC3588B00988096 /* FMRefresh2 */ = {
 			isa = PBXGroup;
 			children = (
+				1DAB142E1DD96FE000724703 /* Classes */,
 				1D8FA0A01DC3588B00988096 /* AppDelegate.h */,
 				1D8FA0A11DC3588B00988096 /* AppDelegate.m */,
 				1D8FA0A31DC3588B00988096 /* ViewController.h */,
 				1D8FA0A41DC3588B00988096 /* ViewController.m */,
 				1D78D9E81DD7589C003555C5 /* RootTableViewController.h */,
 				1D78D9E91DD7589C003555C5 /* RootTableViewController.m */,
-				1D8FA0BA1DC358F000988096 /* refresh */,
 				1D8FA0A61DC3588B00988096 /* Main.storyboard */,
 				1D8FA0A91DC3588B00988096 /* Assets.xcassets */,
 				1D8FA0AB1DC3588B00988096 /* LaunchScreen.storyboard */,
@@ -91,15 +91,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1D8FA0BA1DC358F000988096 /* refresh */ = {
+		1DAB142E1DD96FE000724703 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1D4F60101DC6EDAD0076F554 /* FMRefreshControl.h */,
-				1D4F60111DC6EDAD0076F554 /* FMRefreshControl.m */,
-				1DEBCF641DC4E14C0023EDC8 /* FMRefreshfoot.h */,
-				1DEBCF651DC4E14C0023EDC8 /* FMRefreshfoot.m */,
+				1DAB142F1DD96FE000724703 /* FMRefreshControl.h */,
+				1DAB14301DD96FE000724703 /* FMRefreshControl.m */,
+				1DAB14311DD96FE000724703 /* FMRefreshfoot.h */,
+				1DAB14321DD96FE000724703 /* FMRefreshfoot.m */,
 			);
-			name = refresh;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,11 +174,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D4F60121DC6EDAD0076F554 /* FMRefreshControl.m in Sources */,
 				1D8FA0A51DC3588B00988096 /* ViewController.m in Sources */,
 				1D8FA0A21DC3588B00988096 /* AppDelegate.m in Sources */,
 				1D78D9EA1DD7589C003555C5 /* RootTableViewController.m in Sources */,
-				1DEBCF661DC4E14C0023EDC8 /* FMRefreshfoot.m in Sources */,
+				1DAB14331DD96FE000724703 /* FMRefreshControl.m in Sources */,
+				1DAB14341DD96FE000724703 /* FMRefreshfoot.m in Sources */,
 				1D8FA09F1DC3588B00988096 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
