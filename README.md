@@ -12,9 +12,7 @@
 
 ```
 //初始化一个control
-UIRefreshControl *control = [[UIRefreshControl alloc] init];
-//给control 添加一个刷新方法
-[control addTarget:self action:@selector(refreshAction) forControlEvents:UIControlEventValueChanged];
+UIRefreshControl *control = [[FMRefreshControl alloc] initWithTargrt:self refreshAction:@selector(dorefresh)];
 //把control 添加到 tableView
 [self.tableView addSubview:control];
 ```
