@@ -1,7 +1,6 @@
 # FMRefreshControl
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/ibireme/YYKit/master/LICENSE) [![CocoaPods](http://img.shields.io/cocoapods/p/YYKit.svg?style=flat)](http://cocoapods.org/?q=YYKit) [![Build Status](https://travis-ci.org/ibireme/YYKit.svg?branch=master)](https://travis-ci.org/ibireme/YYKit)
 
-[![Github stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star)](https://github.com/suifengqjn)
 ### how to add
  	
 -	Installation with CocoaPods：pod 'FMRefreshControl'
