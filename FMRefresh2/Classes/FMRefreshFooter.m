@@ -1,12 +1,12 @@
 //
-//  FMRefreshfoot.m
-//  FMRefresh
+//  FMRefreshFooter.m
+//  FMRefresh2
 //
-//  Created by qianjn on 2016/10/28.
-//  Copyright © 2016年 SF. All rights reserved.
+//  Created by qianjn on 2017/5/7.
+//  Copyright © 2017年 SF. All rights reserved.
 //
 
-#import "FMRefreshfoot.h"
+#import "FMRefreshFooter.h"
 
 #define k_FMRefresh_Height 60   //控件的高度
 #define k_FMRefresh_Width [UIScreen mainScreen].bounds.size.width //控件的宽度
@@ -17,25 +17,24 @@ typedef NS_ENUM(NSInteger, FMRefreshState) {
     FMRefreshStateRefreshing,     /** 正在刷新 */
 };
 
-@interface FMRefreshfoot ()
+@interface FMRefreshFooter ()
 
 @property (assign, nonatomic) id refreshTarget;
 @property (nonatomic, assign) SEL refreshAction;
 
 @property (nonatomic, strong) UIScrollView *superScrollView;
-
 @property (nonatomic, strong) UIImageView *imageView;
-
 @property (nonatomic, strong) UILabel *label;
-
 @property (nonatomic, strong) NSArray *refreshImages;
 
 @property (nonatomic,assign) FMRefreshState currentState;
-
 @property (nonatomic, assign) BOOL noMoreData;
+
 @end
 
-@implementation FMRefreshfoot
+
+
+@implementation FMRefreshFooter
 
 - (instancetype)initWithTargrt:(id)target refreshAction:(SEL)refreshAction
 {
@@ -51,8 +50,23 @@ typedef NS_ENUM(NSInteger, FMRefreshState) {
     return self;
 }
 
+- (NSArray *)refreshImages {
+    if (_refreshImages == nil) {
+        NSMutableArray *arrayM = [NSMutableArray array];
+        
+        for (int i = 1; i < 20; i++) {
+            NSString *imageName = [NSString stringWithFormat:@"refresh_%d", i];
+            UIImage *image = [UIImage imageNamed:imageName];
+            
+            [arrayM addObject:image];
+        }
+        
+        _refreshImages = arrayM;
+    }
+    return _refreshImages;
+}
 
-
+#pragma mark - view
 - (void)buildUI
 {
     self.backgroundColor = [UIColor brownColor];
@@ -98,9 +112,10 @@ typedef NS_ENUM(NSInteger, FMRefreshState) {
     }
 }
 
+#pragma mark - kvo
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     
-   
+    
     
     if ([keyPath isEqualToString:@"contentSize"]) {
         
@@ -111,7 +126,7 @@ typedef NS_ENUM(NSInteger, FMRefreshState) {
         
         CGFloat topOffset = self.superScrollView.contentSize.height - self.superScrollView.frame.size.height;
         if (self.superScrollView.isDragging) {
-
+            
             CGFloat pullDistance = self.superScrollView.contentOffset.y - topOffset;
             if (pullDistance > 0 && pullDistance < k_FMRefresh_Height && self.currentState == FMRefreshStatePulling) {
                 NSLog(@"切换到normal");
@@ -120,9 +135,9 @@ typedef NS_ENUM(NSInteger, FMRefreshState) {
                 NSLog(@"切换到pulling");
                 self.currentState = FMRefreshStatePulling;
             }
- 
+            
         } else {
-
+            
             if (self.currentState == FMRefreshStatePulling) {
                 NSLog(@"切换到refreshing");
                 self.currentState = FMRefreshStateRefreshing;
@@ -157,7 +172,7 @@ typedef NS_ENUM(NSInteger, FMRefreshState) {
             self.imageView.animationImages = self.refreshImages;
             self.imageView.animationDuration = 5;
             [self.imageView startAnimating];
-
+            
             UIEdgeInsets contentInset = self.superScrollView.contentInset;
             contentInset.bottom = contentInset.bottom + k_FMRefresh_Height;
             
@@ -172,8 +187,7 @@ typedef NS_ENUM(NSInteger, FMRefreshState) {
     }
 }
 
-
-
+#pragma mark - action
 - (void)doRefreshAction
 {
     
@@ -196,22 +210,6 @@ typedef NS_ENUM(NSInteger, FMRefreshState) {
     }
 }
 
-- (NSArray *)refreshImages {
-    if (_refreshImages == nil) {
-        NSMutableArray *arrayM = [NSMutableArray array];
-        
-        for (int i = 1; i < 20; i++) {
-            NSString *imageName = [NSString stringWithFormat:@"refresh_%d", i];
-            UIImage *image = [UIImage imageNamed:imageName];
-            
-            [arrayM addObject:image];
-        }
-        
-        _refreshImages = arrayM;
-    }
-    return _refreshImages;
-}
-
 - (void)endRefreshingWithNoMoreData
 {
     self.noMoreData = YES;
@@ -230,5 +228,4 @@ typedef NS_ENUM(NSInteger, FMRefreshState) {
     [self.superScrollView removeObserver:self forKeyPath:@"contentSize"];
     [self.superScrollView removeObserver:self forKeyPath:@"contentOffset"];
 }
-
 @end

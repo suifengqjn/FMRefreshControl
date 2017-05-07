@@ -8,12 +8,12 @@
 
 #import "RootTableViewController.h"
 
-#import "FMrefreshControl.h"
-#import "FMRefreshfoot.h"
+#import "FMRefreshHeader.h"
+#import "FMRefreshFooter.h"
 @interface RootTableViewController ()
 @property (nonatomic, strong) NSMutableArray *dataArr;
-@property (nonatomic, strong) FMRefreshControl *refreshCon;
-@property (nonatomic, strong) FMRefreshfoot *foot;
+@property (nonatomic, strong) FMRefreshHeader *refreshCon;
+@property (nonatomic, strong) FMRefreshFooter *foot;
 @end
 
 @implementation RootTableViewController
@@ -25,8 +25,8 @@
     [self loadData];
     [self.tableView reloadData];
     self.tableView.tableFooterView = [[UIView alloc] init];
-    self.refreshCon = [[FMRefreshControl alloc] initWithTargrt:self refreshAction:@selector(dorefresh)];
-    self.foot = [[FMRefreshfoot alloc] initWithTargrt:self refreshAction:@selector(doAppendData)];
+    self.refreshCon = [[FMRefreshHeader alloc] initWithTargrt:self refreshAction:@selector(dorefresh)];
+    self.foot = [[FMRefreshFooter alloc] initWithTargrt:self refreshAction:@selector(doAppendData)];
     [self.tableView addSubview:_refreshCon];
     [self.tableView addSubview:_foot];
 }

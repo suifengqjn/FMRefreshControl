@@ -1,12 +1,12 @@
 //
-//  FMRefreshControl.m
+//  FMRefreshHeader.m
 //  FMRefresh2
 //
-//  Created by qianjn on 2016/10/31.
-//  Copyright © 2016年 SF. All rights reserved.
+//  Created by qianjn on 2017/5/7.
+//  Copyright © 2017年 SF. All rights reserved.
 //
 
-#import "FMRefreshControl.h"
+#import "FMRefreshHeader.h"
 
 #define k_FMRefresh_Height 60   //控件的高度
 #define k_FMRefresh_Width [UIScreen mainScreen].bounds.size.width //控件的宽度
@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, FMRefreshState) {
     FMRefreshStateRefreshing,     /** 正在刷新 */
 };
 
-@interface FMRefreshControl ()
+@interface FMRefreshHeader ()
 @property (nonatomic, assign) CGFloat originalOffsetY;
 @property (nonatomic, strong) UIView  *backgroundView;
 
@@ -35,7 +35,8 @@ typedef NS_ENUM(NSInteger, FMRefreshState) {
 
 @end
 
-@implementation FMRefreshControl
+
+@implementation FMRefreshHeader
 
 - (instancetype)initWithTargrt:(id)target refreshAction:(SEL)refreshAction
 {
@@ -69,8 +70,8 @@ typedef NS_ENUM(NSInteger, FMRefreshState) {
     [self.label sizeToFit];
     [self.backgroundView addSubview:self.label];
     [self updateFrame];
-   
-
+    
+    
 }
 
 
@@ -135,7 +136,7 @@ typedef NS_ENUM(NSInteger, FMRefreshState) {
             self.currentStatus = FMRefreshStateRefreshing;
         }
     }
-
+    
     CGFloat pullDistance = -self.frame.origin.y;
     //pullDistance = MIN(60, -self.frame.origin.y); 悬浮在顶部
     self.backgroundView.frame = CGRectMake(0, 0, k_FMRefresh_Width, pullDistance);
@@ -217,7 +218,7 @@ typedef NS_ENUM(NSInteger, FMRefreshState) {
             [self.superScrollView setContentOffset:offset animated:YES];
         }
     });
-
+    
 }
 
 @end
